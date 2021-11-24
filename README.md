@@ -82,11 +82,24 @@ Results are stored in results/sharp-c_sharp.png, results/sharp-d_sharp.png.
   source scripts/sampling-svhn-B.bash
 ```
 
+### 5.9 Generative-discriminative learning
+```
+  source scripts/classifier.bash
+```
+You can observe the classification error on the console output ("accuracy")
+
+### Appendix: generating the visual alphabet
+```
+  source scripts/alphabet.bash
+  python3 -m DCGMM.utils.vis --what mus --prefix results/L2_ --out ./results/alphabet.png
+```
+View the result in results/alphabet.png. BTW, DCGMM.utils.vis is a flexible tool to visualize DCGMM centroids, variances etc. into png or pdf files
+
 ## A word on the ./bash and ./scripts subdirectories
 The .bash subdir contains the "naked" definitions of parameters for the different DCGMM architectures A though G, in the form of executable script files.
 These should be sourced or executed using the ./<script_file> syntax. 
 
-For several experiments, only a few of the parameters are adapted (e.g., classes, epochs, sampling flags, ..). It therefore seemed excessive to write a new script file 
+For several experiments, only a few of the parameters are adapted (e.g., classes, epochs, sampling flags, ..). It seemed excessive to write a new script file 
 for each new experiment. Each script in ./scripts therefore takes a file from ./bash, copies it to a file tmp.bash while replacing a select few parameters, leaving the rest untouched.
 The command line arguments given in any ./scripts file are therefore only those that need to added/replaced w.r.t. to the respecive file in ./bash. 
 What is finally executed is the generated file ./tmp.bash.
