@@ -13,33 +13,34 @@ We assume you cloned this repository to <path>. All datasets are downloaded via 
 ### Install pip dependencies using 
 
 ```
-  python3 -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 
 ### Download and install Einsumnetworks
 ```
-  cd <path>
-  git clone https://github.com/cambridge-mlg/EinsumNetworks.git
-  export PYTHONPATH=$PYTHONPATH:<path>/EinsumNetworks/src
+cd <path>
+git clone https://github.com/cambridge-mlg/EinsumNetworks.git
+export PYTHONPATH=$PYTHONPATH:<path>/EinsumNetworks/src
 ```
 
 ### Install libspn-keras
-  python3 -m pip install libspn-keras
-
+```
+python3 -m pip install libspn-keras
+```
 
 ### Install DCGMM
 ```
-  git clone https://github-com/anon-scientist/DCGMM
-  cd DCGMM
-  python3 -m pip install .
-  cd ..
+git clone https://github-com/anon-scientist/DCGMM
+cd DCGMM
+python3 -m pip install .
+cd ..
 ```
 
 ### Setting up a path for the results
 ```
-  cd <path>
-  mkdir results
+cd <path>
+mkdir results
 ```
 
 ## Running experiments
@@ -51,47 +52,48 @@ Grid search and cluster distribution are not included. Parameters given through 
 You can change the dataset between mnist and fashion_mnist by modifying the --dataset_name parameter in scripts/training-F.bash. A loss plot is produced in eng.png.
 
 ```
-  source scripts/training-F.bash
-  python3 evalLoss.py results/dynamics_log.json
+source scripts/training-F.bash
+python3 evalLoss.py results/dynamics_log.json
 ```
 
 ### 5.3 outlier detection: model comparison. Graphs are stored in ./results
 ```
-  source exp1/commands.bash        # rat-spn
-  source exp2/commands.bash        # pd-spn
-  source exp3/commands.bash        # dgcspn
-  source scripts/outliers-E.bash   # DCGMM-E
-  python3 -m DCGMM.utils.outliersFromJson --make_plots False --json results/outliers_dgcspn_log.json
-  python3 -m DCGMM.utils.outliersFromJson --make_plots False --json results/outliers_rat_log.json
-  python3 -m DCGMM.utils.outliersFromJson --make_plots False --json results/outliers_pd_log.json
-  python3 -m DCGMM.utils.outliersFromJson --make_plots False --json results/outliers_dcgmm-e_log.json
+source exp1/commands.bash        # rat-spn
+source exp2/commands.bash        # pd-spn
+source exp3/commands.bash        # dgcspn
+source scripts/outliers-E.bash   # DCGMM-E
+python3 -m DCGMM.utils.outliersFromJson --make_plots True --json results/outliers_dgcspn_log.json
+python3 -m DCGMM.utils.outliersFromJson --make_plots True --json results/outliers_rat_log.json
+python3 -m DCGMM.utils.outliersFromJson --make_plots True --json results/outliers_pd_log.json
+python3 -m DCGMM.utils.outliersFromJson --make_plots True --json results/outliers_dcgmm-e_log.json
 ```
 
 ### 5.4 DCGMM sampling and sharpening. PNGs are stored in ./results
+Training on, and sampling from, MNIST using DCGMM C and D (pooling architectures). 
 ```
-  source scripts/sharpening-C.bash
-  source scripts/sharpening-D.bash
+source scripts/sharpening-C.bash
+source scripts/sharpening-D.bash
 ```
 The use of sharpening is controlled though the parameters L1_sharpening_iterations,L4_sharpening_iterations (300=on, 0=off) for sharpening-C.bash, 
 and through L1_sharpening_iterations, L4_sharpening_iterations, L7_sharpening_iterations for sharpening-D.bash.
 Results are stored in results/sharp-c_sharp.png, results/sharp-d_sharp.png.
 
 ### 5.7 SVHN sampling
-  ## training and, and sampling from, one class of SVHN. A PNG will be procued in ./results
+Training on, and sampling from, one class of SVHN. A PNG will be procued in ./results
 ```
-  source scripts/sampling-svhn-B.bash
+source scripts/sampling-svhn-B.bash
 ```
 
 ### 5.9 Generative-discriminative learning
 ```
-  source scripts/classifier.bash
+source scripts/classifier.bash
 ```
 You can observe the classification error on the console output ("accuracy")
 
 ### Appendix: generating the visual alphabet
 ```
-  source scripts/alphabet.bash
-  python3 -m DCGMM.utils.vis --what mus --prefix results/L2_ --out ./results/alphabet.png
+source scripts/alphabet.bash
+python3 -m DCGMM.utils.vis --what mus --prefix results/L2_ --out ./results/alphabet.png
 ```
 View the result in results/alphabet.png. BTW, DCGMM.utils.vis is a flexible tool to visualize DCGMM centroids, variances etc. into png or pdf files
 
@@ -106,7 +108,7 @@ What is finally executed is the generated file ./tmp.bash.
 
 Formally, you should execute experiments from <path>. for example:
 ```
-  source scripts/sampling-svhn-B.bash
+source scripts/sampling-svhn-B.bash
 ```
 
 
