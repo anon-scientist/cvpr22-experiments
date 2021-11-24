@@ -31,8 +31,8 @@ python3 -m pip install libspn-keras
 
 ### Install DCGMM
 ```
-git clone https://github-com/anon-scientist/DCGMM
-cd DCGMM
+git clone https://github-com/anon-scientist/cvpr22-dcgmm
+cd cvpr22-dcgmm
 python3 -m pip install .
 cd ..
 ```
