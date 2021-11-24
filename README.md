@@ -1,18 +1,21 @@
 # Main experiments for anonymoud CVPR submission "A new perspective on probabilistic image modeling"
 
-## Requirements besides Python3 and pip (install using OS):
+## Main dependencies, besides Python3 and pip (install using OS):
 * Ubuntu 20.4
 * TensorFlow 2.5.0
 * PyTorch 1.5.1
+* tensorflow-datasets 4.4.0
 
-Install using 
+
+## Setting up
+We assume you cloned this repository to <path>. All datasets are downloaded via tfds or the analogous PyTorch functionalities, so be sure to have an active Internet connection on your PC.
+
+### Install pip dependencies using 
 
 ```
   python3 -m pip install -r requirements.txt
 ```
 
-## Setting up
-We assume you cloned this repository to <path>. 
 
 ### Download and install Einsumnetworks
 ```
@@ -75,6 +78,20 @@ Results are stored in results/sharp-c_sharp.png, results/sharp-d_sharp.png.
 
 ### 5.7 SVHN sampling
   ## training and, and sampling from, one class of SVHN. A PNG will be procued in ./results
+```
+  source scripts/sampling-svhn-B.bash
+```
+
+## A word on the ./bash and ./scripts subdirectories
+The .bash subdir contains the "naked" definitions of parameters for the different DCGMM architectures A though G, in the form of executable script files.
+These should be sourced or executed using the ./<script_file> syntax. 
+
+For several experiments, only a few of the parameters are adapted (e.g., classes, epochs, sampling flags, ..). It therefore seemed excessive to write a new script file 
+for each new experiment. Each script in ./scripts therefore takes a file from ./bash, copies it to a file tmp.bash while replacing a select few parameters, leaving the rest untouched.
+The command line arguments given in any ./scripts file are therefore only those that need to added/replaced w.r.t. to the respecive file in ./bash. 
+What is finally executed is the generated file ./tmp.bash.
+
+Formally, you should execute experiments from <path>. for example:
 ```
   source scripts/sampling-svhn-B.bash
 ```

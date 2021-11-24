@@ -10,7 +10,7 @@ python3  -m DCGMM.utils.executeExp bash/DCGMM-B.bash --T1 0  --exp_id 12426 --ep
 --no_avg_metrics scores blah 
 # ---
 chmod 777 ./tmp.bash
-#./tmp.bash
+./tmp.bash
 # +++
 python3  -m DCGMM.utils.executeExp bash/DCGMM-B.bash --T1 0  --T2 0 --exp_id 12426 --epochs 0.1 \
 --load_task 1 \
