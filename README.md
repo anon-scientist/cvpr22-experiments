@@ -1,4 +1,4 @@
-# Main experiments for anonymoud CVPR submission "A new perspective on probabilistic image modeling"
+# Main experiments for anonymous CVPR submission "A new perspective on probabilistic image modeling"
 
 ## Main dependencies, besides Python3 and pip (install using OS):
 * Ubuntu 20.4
