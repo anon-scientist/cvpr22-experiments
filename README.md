@@ -8,7 +8,7 @@
 
 
 ## Setting up
-We assume you cloned this repository to <path>. All datasets are downloaded via tfds or the analogous PyTorch functionalities, so be sure to have an active Internet connection on your PC.
+We assume you cloned this repository to "path". All datasets are downloaded via tfds or the analogous PyTorch functionalities, so be sure to have an active Internet connection on your PC.
 
 ### Install pip dependencies using 
 
@@ -31,7 +31,7 @@ python3 -m pip install libspn-keras
 
 ### Install DCGMM
 ```
-git clone https://github-com/anon-scientist/cvpr22-dcgmm
+git clone https://github.com/anon-scientist/cvpr22-dcgmm
 cd cvpr22-dcgmm
 python3 -m pip install .
 cd ..
