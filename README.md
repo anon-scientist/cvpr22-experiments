@@ -22,7 +22,7 @@ cd cvpr22-experiments
 python3 -m pip install -r requirements.txt
 ```
 
-### Download and install Einsumnetworks
+### Download and install EinsumNetworks
 ```
 git clone https://github.com/cambridge-mlg/EinsumNetworks.git
 export PYTHONPATH=$PYTHONPATH:<path>/EinsumNetworks/src
