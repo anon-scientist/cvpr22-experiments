@@ -8,7 +8,13 @@
 
 
 ## Setting up
-We assume you cloned this repository to "path". All datasets are downloaded via tfds or the analogous PyTorch functionalities, so be sure to have an active Internet connection on your PC.
+All datasets are downloaded via tfds or the analogous PyTorch functionalities, so be sure to have an active Internet connection on your PC.
+
+We assume you cloned this repository to "cvpr22-experiments" via https. Then, we chdir to this path and stay there:
+```
+git clone https://github.com/anon-scientist/cvpr22-experiments
+cd cvpr22-experiments
+```
 
 ### Install pip dependencies using 
 
@@ -16,10 +22,8 @@ We assume you cloned this repository to "path". All datasets are downloaded via 
 python3 -m pip install -r requirements.txt
 ```
 
-
 ### Download and install Einsumnetworks
 ```
-cd <path>
 git clone https://github.com/cambridge-mlg/EinsumNetworks.git
 export PYTHONPATH=$PYTHONPATH:<path>/EinsumNetworks/src
 ```
@@ -39,7 +43,6 @@ cd ..
 
 ### Setting up a path for the results
 ```
-cd <path>
 mkdir results
 ```
 
