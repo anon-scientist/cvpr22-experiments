@@ -7,7 +7,7 @@ seaborn==0.10.1
 networkx==2.4.0
 tqdm==4.47.0
 filelock==3.0.12
-tensorflow-gpu
+tensorflow
 tensorflow_datasets==4.4.0
 
 
