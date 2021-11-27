@@ -16,7 +16,7 @@ git clone https://github.com/anon-scientist/cvpr22-experiments
 cd cvpr22-experiments
 ```
 
-### Install pip dependencies using 
+### Install pip dependencies
 
 If Python3 and pip are not yet installed, install them using:
 ```
