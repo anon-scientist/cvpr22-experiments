@@ -1,6 +1,6 @@
 # Main experiments for anonymous CVPR submission "A new perspective on probabilistic image modeling"
 
-## Main dependencies, besides Python3 and pip (install using OS):
+## Main dependencies:
 * Ubuntu 20.4
 * TensorFlow 2.5.0
 * PyTorch 1.5.1
@@ -18,6 +18,11 @@ cd cvpr22-experiments
 
 ### Install pip dependencies using 
 
+If Python3 and pip are not yet installed, install them using:
+```
+sudo apt-get install python3-pip
+```
+Then, use pip for installing the main dependencies:
 ```
 python3 -m pip install -r requirements.txt
 ```
