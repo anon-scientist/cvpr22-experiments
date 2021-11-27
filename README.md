@@ -27,6 +27,9 @@ Then, use pip for installing the main dependencies:
 python3 -m pip install -r requirements.txt
 ```
 
+If you want to use a GPU with tensorflow, you will need to install a cuda driver and the cuda toolkit, as well as the cuDNN library.
+See https://www.tensorflow.org/install/gpu for details
+
 ### Download and install EinsumNetworks
 ```
 git clone https://github.com/cambridge-mlg/EinsumNetworks.git
